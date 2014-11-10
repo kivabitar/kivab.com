@@ -1,0 +1,2 @@
+---this is the codebase for kivab.com ---
+---written by kiva bitar for really no reason other than I am currently unemployed and felt i needed to brush up on some skills---
