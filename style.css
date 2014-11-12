@@ -8,6 +8,7 @@ display:inline;
 float:left;
 clear:left;
 margin:10px 10px;
+cursor:pointer;
 }
 
 h1,h2,h3,h4,nav li a{
@@ -67,16 +68,36 @@ text-decoration:none;
 nav li a.active{
 color:#FFC140;
 }
-
+section{
+padding-top:40px;
+height:1200px;
+width:100%;
+background:url(/images/kb_lrg.png) no-repeat 100% 50% fixed;
+}
 @media screen and (max-width:640px){
+	#logo{
+	float:left;
+	clear:both;
+	}
 	nav{
 	width:90%;
 	}
-	nav li{
-	max-width:22%;
+	nav ul{
+	display:block;
+	width:100%;
+	float:left;
+	clear:both;
 	}
-	nav li a{
-	font-size:13px;
+	nav li{
+	text-align:left;
+	max-width:90%;
+	float:left;
+	clear:both;
+	display:block;
+	margin: 0 0 6px 0;
+	}
+	section{
+	padding-top:120px;
 	}
 	section.content{
 	width:90%;
@@ -89,16 +110,11 @@ color:#FFC140;
 	section .content {
 	margin:0px auto;
 	max-width:640px;
+	padding:0 10px 0 10px;
 	}
 }
 
-section{
-padding-top:40px;
-height:1200px;
-width:100%;
-background:url(/images/kb_lrg.png) no-repeat 100% 50% fixed;
 
-}
 @media screen and (min-width:1400px){
 	section .content {
 	margin:0px auto;
