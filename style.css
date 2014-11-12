@@ -119,6 +119,9 @@ background:url(/images/kb_lrg.png) no-repeat 100% 50% fixed;
 	section .content {
 	margin:0px auto;
 	max-width:1440px;
+	background-image: url('/images/bg.png');
+	background-position:top right;
+	background-repeat:no-repeat;
 	}
 }
 section .content a{
