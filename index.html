@@ -13,10 +13,12 @@
 <script src="/scripts/jquery.fancybox.js"></script>
 <script src="/scripts/jquery.fancybox.pack.js"></script>
 <script src="/scripts/scroll.js"></script>
+<script src="/scripts/jquery.slicknav.min.js"></script>
+<link href="/scripts/slicknav.css" media="all" rel="stylesheet" />
+
 <script>
 $(function() { 
 	$.scrollIt(); 
-	
 });
 
 </script>
@@ -32,20 +34,20 @@ $(function() {
 
 </script>
 </head>
-<body>
+<body data-scroll-index='0'>
 <div class='nav-container'>
 	<img src="/images/kb.png" id="logo" alt="Kiva Bitar" data-scroll-nav='0'/>
 	<nav>
-		<ul>
+		<ul id="menu">
 			<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
-			<li><a class='active' data-scroll-nav='0'>About</a></li>
-			<li><a data-scroll-nav='1'>Work</a></li>
-			<li><a data-scroll-nav='2'>Contact</a></li>
+			<li><a class='active' data-scroll-nav='1'>About</a></li>
+			<li><a data-scroll-nav='2'>Work</a></li>
+			<li><a data-scroll-nav='3'>Contact</a></li>
 		</ul>
 	</nav>
 </div>
 
-<section data-scroll-index='0' id="about">
+<section data-scroll-index='1' id="about">
 
 	<div class='content'>
 	<h1>Kiva Bitar</h1>
@@ -67,7 +69,7 @@ $(function() {
 	</div>
 	
 </section>
-<section data-scroll-index='1' id="work">
+<section data-scroll-index='2' id="work">
 	<div class='content'>
 		<h2>Work</h2>
 		<p>
@@ -102,7 +104,7 @@ $(function() {
 		</div>
 	</div>
 </section>
-<section data-scroll-index='2' id="contact">
+<section data-scroll-index='3' id="contact">
 	<div class='content'>
 		<h2>Contact</h2>
 		Email: bitar.k@gmail.com
@@ -177,8 +179,35 @@ $(function() {
 			})
 			
 		})
+		var wwidth = $( window ).width();
+		if(wwidth < 800){
+			$(".nav-container").hide();
+			$('#menu').slicknav({
+				label: '',
+				duration: 500,
+				closeOnClick: true
+			});
+		}
+		
+		
 	})
-
+	
+	$(window).resize(function() {
+		var wwidth = $( window ).width();
+		if(wwidth < 800){
+			$(".nav-container").hide();
+			$('#menu').slicknav({
+				label: '',
+				duration: 500,
+				closeOnClick: true
+			});
+			$(".slicknav_menu").show();
+		}
+		else{
+			$(".slicknav_menu").hide();
+			$(".nav-container").show();
+			}
+	});
 </script>
 </body>
 </html>
