@@ -81,21 +81,21 @@ color:#062270;
 section .content a:hover{
 color:#062270;
 }
-section:nth-child(even){
+section:nth-child(odd){
 background-color:#fff;
 color: #2B4281;
 }
-section:nth-child(even) h1,h2,h3,h4{
+section:nth-child(odd) h1,h2,h3,h4{
 color:#2B4281;
 }
-section:nth-child(odd){
+section:nth-child(even){
 background-color:#2B4281;
 color:white;
 }
-section:nth-child(odd) a{
+section:nth-child(even) a{
 color:white;
 }
-section:nth-child(odd) h1,h2,h3,h4{
+section:nth-child(even) h1,h2,h3,h4{
 color:#FFC140;	
 }
 .bottom-link{
@@ -208,16 +208,27 @@ display:inline;
   	max-width:640px;
   	padding:70px 10px 0 10px;
 	}
-
+	section{
+	background-image:url(/images/kb_lrg.png);
+	background-size:50% !important;
+	background-position:100% 0%;
+	background
+	}
 }
 
 @media screen and (min-width:641px) and (max-width:1399px){
 	section .content {
 	margin:0px auto;
 	max-width:800px;
-	background-position:top right;
+	background-position:top left;
 	background-repeat:no-repeat;
 	padding:0 10px 0 10px;
+	}
+	section{
+	background-image:url(/images/kb_lrg.png);
+	background-size:50% !important;
+	background-position:100% 0%;
+	background
 	}
 }
 @media screen and (min-width:1400px){
