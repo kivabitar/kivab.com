@@ -224,7 +224,6 @@ display:inline;
 	section .content {
 	margin:0px auto;
 	max-width:1440px;
-	background-image: url('/images/bg.png');
 	background-position:top right;
 	background-repeat:no-repeat;
 	padding:0 10px 0 10px;
