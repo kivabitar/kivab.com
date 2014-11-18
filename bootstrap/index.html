@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KivaB Bootstrap example</title>
+<meta name="description" content="Kiva Bitar - Full Stack Web Developer">
+<meta name="author" content="Kiva Bitar">
+<!-- Bootstrap -->
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="jumbotron.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../"><img src="../images/kb.png" id="logo" alt="Kiva Bitar" data-scroll-nav='0'/></a>
+     </div>
+     <div id="navbar" class="navbar-collapse collapse">
+       <form class="navbar-form navbar-right" role="form">
+         <div class="form-group">
+           <input type="text" placeholder="Email" class="form-control">
+         </div>
+         <div class="form-group">
+           <input type="password" placeholder="Password" class="form-control">
+         </div>
+         <button type="submit" class="btn btn-success">Sign in</button>
+       </form>
+     </div><!--/.navbar-collapse -->
+   </div>
+ </nav>
+<div class="jumbotron">
+   <div class="container">
+     <h1>Hello, Bootstrappers!</h1>
+     <img src="/images/kiva.jpg" title="Kiva Bitar" alt="Kiva Bitar"/><br>
+     <p>Bootstap is easy to implement and saves time. It took me all of 15 minutes to install this and tweak this page.</p>
+     <h3> $bower install bootstrap</h3>
+	
+								
+     <p><a class="btn btn-primary btn-lg" href="../" role="button">&lt;&lt; Take me back</a></p>
+   </div>
+</div>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+			<h2>Kiva Bitar</h2>
+
+			<ul>
+				<li>ColdFusion / PHP Full Stack Web Developer</li>
+				<li>CSS/jQuery/HTML5</li>
+				<li>E-commerce</li>
+				<li>Apache/IIS</li>
+				<li>Adobe Creative Suite Veteran</li>	
+			</ul>
+    </div>
+    <div class="col-md-4">
+      <h3>Web Applications</h3>
+				<ul>
+					<li>Dynamic Web Applications / PHP / CFM</li>
+					<li>Custom Wordpress Plugins</li>
+					<li>E-commerce / Custom / Pinnacle / Miva Merchant / Ecwid / Volusion </li>
+					<li>Standalone web applications</li>
+					<li>Custom CMS/CRM</li>
+				</ul>
+				<h3>Graphic Design*</h3>
+				
+				<ul>
+					<li>Branding / Logos</li>
+					<li>Business Cards</li>
+					<li>CD/Album covers</li>
+					<li>Flyers / Posters</li>
+				</ul>
+				<span style="font-size:.8em;color:#FFC140;">*No illustrations</span>
+				<h3>SEO / SEM</h3>
+				<ul>
+					<li>Adwords / Bing Ads</li>
+					<li>Analytics / Google Webmaster Tools / Bing Webmaster Tools</li>
+				</ul>
+   </div>
+    <div class="col-md-4">
+      <h2>Contact</h2>
+		Email: bitar.k@gmail.com
+
+				<form id="cform2" class="pull-left">
+					<p>
+						<div class="input-group input-group-lg">
+							<input name="name" type="text" placeholder="Your name" id="name"  class="form-control">
+						</div>
+					</p>
+					<p>
+						<div class="input-group input-group-lg  offset1">
+							<input name="email" type="text" placeholder ="Your Email" id="email"  class="form-control">
+						</div>
+					</p>
+					<p>
+						<div class="input-group input-group-lg  offset1">
+							<textarea name="message" placeholder="Your Message" id="message"  class="form-control"></textarea>
+						</div>
+					</p>
+					<p>
+						<div class="input-group input-group-lg  offset1">
+							<input type="button" value="send" id="subby"  class="form-control">
+						</div>
+					</p>
+				</form>
+				<div id="response2" style="display:none">
+				</div>
+
+		</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer class="footer">
+    <ul class="nav nav-pills">
+		<li role="presentation" ><a href="http://kivabitar.blogspot.com/" title="Blogger" target="_blank">&gt; Blog</a></li>
+		<li role="presentation" ><a href="http://www.linkedin.com/in/kivabitar" title="Linkedin" target="_blank">&gt; Linkedin</a></li>
+		<li role="presentation" ><a href="https://github.com/kivabitar/kivab.com/" title="GitHub" target="_blank">&gt; GitHub</a></li>
+		<li role="presentation" ><a href="http://kivab.com">Home</a></li>
+	</ul>
+  </footer>
+</div> <!-- /container -->
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#subby").click(function(){
+		var name = $("#name").val();
+		var email = $("#email").val();
+		var message = $("#message").val();
+		if(name == ""){
+			$("#name").focus();
+			return false
+		}
+		if(email == ""){
+			$("#email").focus();
+			return false
+		}
+		if(message == ""){
+			$("#message").focus();
+			return false
+		}
+		$.ajax({
+			type: "POST",
+			url: "../proc.cfm",
+			data: $("#cform2").serialize(),
+			success: function(data){
+				$("#response2").html(data).slideDown("fast");
+				$("#cform2").slideUp("slow");
+				$("#cform2").each(function(){
+					$(this).reset();
+				})
+				
+			}
+		
+		})
+		
+	})
+});
+</script>
+  </body>
+</html>

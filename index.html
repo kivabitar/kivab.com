@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <title>Kiva Bitar - Full Stack Web Developer - Portland Oregon</title>
+<meta name="description" content="Kiva Bitar - Full Stack Web Developer">
+<meta name="author" content="Kiva Bitar">
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
@@ -34,42 +36,39 @@ $(function() {
 
 </script>
 </head>
-<body data-scroll-index='0'>
+<body>
 <div class='nav-container'>
 	<img src="/images/kb.png" id="logo" alt="Kiva Bitar" data-scroll-nav='0'/>
 	<nav>
 		<ul id="menu">
 			<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
-			<li><a class='active' data-scroll-nav='1'>About</a></li>
-			<li><a data-scroll-nav='2'>Work</a></li>
-			<li><a data-scroll-nav='3'>Contact</a></li>
+			<li><a class='active' data-scroll-nav='0'>About</a></li>
+			<li><a data-scroll-nav='1'>Work</a></li>
+			<li><a data-scroll-nav='2'>Contact</a></li>
 		</ul>
 	</nav>
 </div>
 
-<section data-scroll-index='1' id="about">
+<section data-scroll-index='0' id="about">
 
 	<div class='content'>
 	<h1>Kiva Bitar</h1>
 	
-						<img src="/images/kiva.jpg" title="Kiva Bitar" alt="Kiva Bitar"/><br>
-						<ul>
-							<li>ColdFusion / PHP Full Stack Web Developer</li>
-							<li>CSS/jQuery/HTML5</li>
-							<li>E-commerce</li>
-							<li>Apache/IIS</li>
-							<li>Adobe Creative Suite Veteran</li>
-							<li>&nbsp;</li>
-							
-						</ul>
-					</div>
-
-		
-			
+		<img src="/images/kiva.jpg" title="Kiva Bitar" alt="Kiva Bitar" class="oldman" /> <br />
+		<ul>
+			<li>ColdFusion / PHP Full Stack Web Developer</li>
+			<li>CSS/jQuery/HTML5</li>
+			<li>E-commerce</li>
+			<li>Apache/IIS</li>
+			<li>Adobe Creative Suite Veteran</li>
+			<li>&nbsp;</li>
+			<li><a href="/bootstrap/">Bootstrap Example</a></li>
+		</ul>
 	</div>
+
 	
 </section>
-<section data-scroll-index='2' id="work">
+<section data-scroll-index='1' id="work">
 	<div class='content'>
 		<h2>Work</h2>
 		<p>
@@ -104,7 +103,7 @@ $(function() {
 		</div>
 	</div>
 </section>
-<section data-scroll-index='3' id="contact">
+<section data-scroll-index='2' id="contact">
 	<div class='content'>
 		<h2>Contact</h2>
 		Email: bitar.k@gmail.com
@@ -137,8 +136,9 @@ $(function() {
 <footer id="footer">
 	<ul>
 		<li><a href="http://kivabitar.blogspot.com/" title="Blogger" class="hrefers" target="_blank">&gt; Blog</a></li>
-		<li><a href="https://www.linkedin.com/pub/kiva-bitar/2/768/382" title="Linkedin" class="hrefers" target="_blank">&gt; Linkedin</a></li>
+		<li><a href="http://www.linkedin.com/in/kivabitar" title="Linkedin" class="hrefers" target="_blank">&gt; Linkedin</a></li>
 		<li><a href="https://github.com/kivabitar/kivab.com/" title="GitHub" class="hrefers" target="_blank">&gt; GitHub</a></li>
+		<li><a data-scroll-goto='0' class="hrefers">Top</a></li>
 	</ul>
 </footer>
 <script>

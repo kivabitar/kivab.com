@@ -40,6 +40,8 @@
     -moz-border-radius: 4px;
     border-radius: 4px;  
     background-color: #0fb4e7;
+    
+
 }
 /* Button Text */
 .slicknav_menu  .slicknav_menutxt {
@@ -52,15 +54,17 @@
   background-color: #f5f5f5;
 }
 .slicknav_menu {
-	background:url(/images/kb.png) no-repeat top left;
-    background-color:#062270;
+	background:url(/images/kb.png) no-repeat 10px 10px;    
+	background-color:#062270;
     padding:5px;
+    margin-bottom:-50px;
 }
 .slicknav_nav {
     color:#fff;
     margin:0;
     padding:0;
     font-size:0.875em;
+    margin-bottom:50px;
 }
 .slicknav_nav, .slicknav_nav ul {
     list-style: none;
