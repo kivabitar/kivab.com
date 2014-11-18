@@ -41,8 +41,11 @@ $(function() {
 	<img src="/images/kb.png" id="logo" alt="Kiva Bitar" data-scroll-nav='0'/>
 	<nav>
 		<ul id="menu">
-			<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
-			<li><a class='active' data-scroll-nav='0'>About</a></li>
+			<li><a class='active' data-scroll-nav='0'>About</a>
+				<ul>
+					<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
+				</ul>
+			</li>
 			<li><a data-scroll-nav='1'>Work</a></li>
 			<li><a data-scroll-nav='2'>Contact</a></li>
 		</ul>
@@ -63,6 +66,7 @@ $(function() {
 			<li>Adobe Creative Suite Veteran</li>
 			<li>&nbsp;</li>
 			<li><a href="/bootstrap/">Bootstrap Example</a></li>
+			<li><a href="/grunt.html">Grunt / LESS Page</a></li>
 		</ul>
 	</div>
 
@@ -109,10 +113,6 @@ $(function() {
 		Email: bitar.k@gmail.com
 			<form id="cform">
 			<ul>
-				
-				<li>
-					<input name="name" type="text" placeholder="Your name" id="name">
-				</li>
 				<li>
 					<input name="email" type="text" placeholder ="Your Email" id="email">
 				</li>
@@ -179,34 +179,15 @@ $(function() {
 			})
 			
 		})
-		var wwidth = $( window ).width();
-		if(wwidth < 800){
-			$(".nav-container").hide();
-			$('#menu').slicknav({
-				label: '',
-				duration: 500,
-				closeOnClick: true
-			});
-		}
-		
-		
-	})
-	
-	$(window).resize(function() {
-		var wwidth = $( window ).width();
-		if(wwidth < 800){
-			$(".nav-container").hide();
-			$('#menu').slicknav({
-				label: '',
-				duration: 500,
-				closeOnClick: true
-			});
-			$(".slicknav_menu").show();
-		}
-		else{
-			$(".slicknav_menu").hide();
-			$(".nav-container").show();
-			}
+
+	$('#menu').slicknav({
+		label: '',
+		duration: 500,
+		closeOnClick: true,
+		prependTo: $('.nav-container')
+	});
+			
+
 	});
 </script>
 </body>

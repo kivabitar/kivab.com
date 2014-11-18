@@ -11,7 +11,7 @@ margin:10px 10px;
 cursor:pointer;
 }
 
-h1,h2,h3,h4,nav li a{
+h1,h2,h3,h4{
 font-family:'Syncopate',sans-serif;
 }
 h1{
@@ -48,31 +48,18 @@ left:0px;
 }
 
 nav{
+display:none;
 text-align:left;
 width:640px;
 max-width:100%;
 margin:0px auto;
 }
-nav ul{
-padding:0px;
-}
-nav li{
-padding:0 10px;
-display:inline-block;
-}
-nav li a{
-font-size:15px;
-color:white;
-text-decoration:none;
-}
-nav li a.active{
-color:#FFC140;
-}
+
 section{
 padding-top:40px;
 height:1200px;
 width:100%;
-background:url(/images/kb_lrg.png) no-repeat 100% 50% fixed;
+background:url(/images/kb_lrg.png) no-repeat 100% 60px fixed;
 }
 
 section .content a{
@@ -211,7 +198,7 @@ display:inline;
 	section{
 	background-image:url(/images/kb_lrg.png);
 	background-size:50% !important;
-	background-position:100% 0%;
+	background-position:100% 60px;
 	background
 	}
 }
@@ -227,7 +214,7 @@ display:inline;
 	section{
 	background-image:url(/images/kb_lrg.png);
 	background-size:50% !important;
-	background-position:100% 0%;
+	background-position:100% 60px;
 	background
 	}
 }
