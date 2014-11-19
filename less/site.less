@@ -1,15 +1,252 @@
 @red: #ff0000;
 @blue: #58c;
+@blue0:#2B4281;
+@blue1:#062270;
+@lightblue: #A9D0F5;
 @bold: impact;
 @big: 40px;
 @black: #000;
+@black0: #222;
+@lightgrey: #dedede;
+@orange: #F3E2A9;
+@font0: Helvetica, Arial, "Trebuchet-ms", Verdana,sans-serif;
+@font1: 'Syncopate',sans-serif;
+@nav: #062270;
+@links: @blue;
+@buttonbg: #FF7800;
+@buttonborder: #FF7800;
 
-body{background-color:@black;color:#fff;font-family:sans-serif;}
-table{border:none;padding:10px;text-align:left}
-table tr{margin:10px}
-table td, table th{padding:10px;margin:0 20px}
-a{color:@blue}
-h1{color:@red}
-p{color:@blue}
-pre{color:#ddd}
-.big{font-family:@bold;font-size:@big}
+
+body{
+padding:0px;
+margin:0px;
+font-family:@font0;
+background-color:@black;
+color:@lightgrey;
+}
+#logo{
+display:inline;
+float:left;
+clear:left;
+margin:10px 10px;
+cursor:pointer;
+}
+
+h1,h2,h3,h4{
+font-family:@font1;
+}
+h1{
+font-size:48px;
+margin-top:40px;
+margin-bottom:10px;
+color:@blue1;
+}
+h2{
+margin-top:60px;
+font-size:28px;
+}
+h4{
+font-size:20px;
+margin-bottom:10px;
+}
+a{
+cursor:pointer;
+text-decoration:none;
+color:@links;
+}
+
+ul{
+list-style:none;
+max-width:100%;
+}
+section img{
+max-width:100%;
+}
+.nav-container{
+width:100%;
+max-width:100%;
+position:fixed;
+left:0px;
+}
+
+nav{
+display:none;
+text-align:left;
+width:640px;
+max-width:100%;
+margin:0px auto;
+}
+
+section{
+padding-top:40px;
+height:1200px;
+width:100%;
+background:url(/images/kb_lrg.png) no-repeat 100% 60px fixed;
+}
+
+section .content a{
+color:@blue1;
+text-decoration:none;
+}
+section .content a:hover{
+color:@lightgrey;
+}
+section:nth-child(odd){
+background-color:@black;
+color: @lightgrey;
+}
+section:nth-child(odd) h1,h2,h3,h4{
+color:@lightblue;;
+}
+section:nth-child(even){
+background-color:@black0;
+color:white;
+}
+section:nth-child(even) a{
+color:@blue;
+}
+section:nth-child(even) h1,h2,h3,h4{
+color:@lightblue;;	
+}
+.bottom-link{
+margin-top:80px;
+}
+
+.gist-meta{
+display:none;}
+
+.file-data{
+font-size:14px;
+}
+#timeline{
+postion:absolute;
+top:20%;
+left:50%;
+margin:auto;
+width:100%;
+height:1200px;
+}
+#closer{
+float:right;
+clear:both;
+margin:10px;
+font-weight:bold;
+color:@blue1;
+}
+.oldman{
+	max-width:300px;
+}
+#sidebar{
+postition:absolute;
+display:block;
+left:10px;
+margin:0;
+background-color:#A64E00;
+z-index:100;
+overflow:hidden;
+}
+#sidebar a{
+margin:6px 10px;
+}
+input{
+width:200px;
+margin:10px 0;
+padding:10px;
+}
+textarea{
+font-family:Helvetica,Verdana,"Trebuchet-MS",sans-serif;
+width:200px;
+margin:10px 0;
+padding:10px;
+color:@blue1;
+}
+input[type="submit"]{
+width:100px;
+background-color:@buttonbg;
+color:@blue1;
+border:1px solid @buttonborder;
+}
+#workdiv{
+max-width:100%;
+overflow:hidden;
+}
+#hscroll{
+ margin:10px;
+}
+.slide{
+width:100%;
+display:block;
+height:800px;
+}
+.hrefers{
+text-decoration:none;
+color:@blue;
+}
+.hrefers:hover{
+color:@lightblue;;
+}
+#footer{
+position:fixed;
+bottom:0;
+left:0;
+height:50px;
+width:100%;
+background-color:@black;
+opacity:.7;
+}
+#footer:hover{
+opacity:.9;
+}
+#footer ul li{
+margin:0 10px;
+float:left;
+display:inline;
+}
+@media screen and (max-width:640px){
+	#footer ul li{
+	margin:4px;
+	float:left;
+	display:inline;
+	}
+	section .content{
+	width:90%;
+	padding-top:160px;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover !important;
+  	max-width:640px;
+  	padding:70px 10px 0 10px;
+	}
+	section{
+	background-image:url(/images/kb_lrg.png);
+	background-size:50% !important;
+	background-position:100% 60px;
+	background-repeat:no-repeat;
+	}
+}
+
+@media screen and (min-width:641px) and (max-width:1399px){
+	section .content {
+	margin:0px auto;
+	max-width:800px;
+	background-position:top left;
+	background-repeat:no-repeat;
+	padding:0 10px 0 10px;
+	}
+	section{
+	background-image:url(/images/kb_lrg.png);
+	background-size:50% !important;
+	background-position:100% 60px;
+	background-repeat:no-repeat;
+	}
+}
+@media screen and (min-width:1400px){
+	section .content {
+	margin:0px auto;
+	max-width:1440px;
+	background-position:top right;
+	background-repeat:no-repeat;
+	padding:0 10px 0 10px;
+	}
+}

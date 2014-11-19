@@ -9,7 +9,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
-<link href="/style.css" media="all" rel="stylesheet" />
+<link href="/site.css" media="all" rel="stylesheet" />
 <link href="/scripts/jquery.fancybox.css" media="all" rel="stylesheet" />
 <script src="/scripts/scroll.js"></script>
 <script src="/scripts/jquery.fancybox.js"></script>
@@ -41,8 +41,9 @@ $(function() {
 	<img src="/images/kb.png" id="logo" alt="Kiva Bitar" data-scroll-nav='0'/>
 	<nav>
 		<ul id="menu">
-			<li><a class='active' data-scroll-nav='0'>About</a>
+			<li><a>About</a>
 				<ul>
+					<a class='active' data-scroll-nav='0'>Summary</a>
 					<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
 				</ul>
 			</li>
@@ -66,7 +67,6 @@ $(function() {
 			<li>Adobe Creative Suite Veteran</li>
 			<li>&nbsp;</li>
 			<li><a href="/bootstrap/">Bootstrap Example</a></li>
-			<li><a href="/grunt.html">Grunt / LESS Example</a></li>
 			<li><a href="/angular.html">Angular.js + CFC Example</a></li>
 		</ul>
 	</div>
@@ -114,6 +114,9 @@ $(function() {
 		Email: bitar.k@gmail.com
 			<form id="cform">
 			<ul>
+				<li>
+					<input name="name" type="text" placeholder="Your name" id="name">
+				</li>
 				<li>
 					<input name="email" type="text" placeholder ="Your Email" id="email">
 				</li>
@@ -182,7 +185,7 @@ $(function() {
 		})
 
 	$('#menu').slicknav({
-		label: '',
+		label: ' ',
 		duration: 500,
 		closeOnClick: true,
 		prependTo: $('.nav-container')

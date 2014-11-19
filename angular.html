@@ -8,8 +8,10 @@
 <meta name="author" content="Kiva Bitar">
 
 <link href="/site.css" media="all" rel="stylesheet" />
+<link href="/scripts/codemirror.css" media="all" rel="stylesheet" />
+<link href="/scripts/3024-night.css" media="all" rel="stylesheet" />
 <script src="/node_modules/angular/angular.js"></script>
-
+<script src="/scripts/codemirror.js"></script>
 <script>
 	var kivasApp = angular.module('kivasApp',[]);
 	kivasApp.controller('kbCtrl',function($scope,$http){
@@ -60,7 +62,7 @@ This page is an example of Angular.js working with a Coldfusion Component. The c
 </p>
 
 <p>The following is the .cfc markup:<br />
-	<textarea style="width:900px;height:360px;background-color:#222;color:#fff;">
+	<textarea id="myText">
 <cfcomponent displayname="JSON" hint="I return a json structure" output="false">
 
 	<cffunction name="list" output="true" returnformat="JSON" access="remote">
@@ -80,11 +82,19 @@ This page is an example of Angular.js working with a Coldfusion Component. The c
               <cfelse>
                       <cfreturn result>
               </cfif>
-</cffunction>		
+	</cffunction>		
 
 </cfcomponent></textarea>
 </p>
 
 <a href="/">Back</a>
+<script>
+  var editor = CodeMirror.fromTextArea(myText, {
+    mode: "text/html",
+    lineNumbers:true,
+    matchBrackets:true,
+    theme: "3024-night"
+  });
+</script>
 </body>
 </html>
