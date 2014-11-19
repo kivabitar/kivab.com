@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kivasApp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title>Kiva Bitar - Full Stack Web Developer - Portland Oregon - Angular.js example</title>
+<meta name="description" content="Kiva Bitar - Full Stack Web Developer">
+<meta name="author" content="Kiva Bitar">
+
+<link href="/site.css" media="all" rel="stylesheet" />
+<script src="/node_modules/angular/angular.js"></script>
+
+<script>
+	var kivasApp = angular.module('kivasApp',[]);
+	kivasApp.controller('kbCtrl',function($scope,$http){
+		$http.get('json.cfc?method=list').success(function(data){
+			$scope.info = data;
+		});
+	});
+</script>
+
+<link rel="icon"  type="image/png" href="/images/kb.png">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56155426-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body ng-controller="kbCtrl">
+
+<h1>Angular.js</h1>
+<p>The following table of data is pulled via $http by Angular.js and populated into the appropriate columns.
+<table>
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Address</th>
+		<th>City</th>
+		<th>State</th>
+		<th>Country</th>
+		<th>Phone</th>
+	</tr>
+	<tr>
+		<td>{{info.FIRSTNAME}}</td>
+		<td>{{info.LASTNAME}}</td>
+		<td>{{info.ADDRESS}}</td>
+		<td>{{info.CITY}}</td>
+		<td>{{info.STATE}}</td>
+		<td>{{info.COUNTRY}}</td>
+		<td>{{info.PHONE}}</td>
+	</tr>
+</table>
+<p>
+This page is an example of Angular.js working with a Coldfusion Component. The coldfusion component returns a JSON structure you can view <a href="/json.cfc?method=list">here</a>
+</p>
+
+<p>The following is the .cfc markup:<br />
+	<textarea style="width:900px;height:360px;background-color:#222;color:#fff;">
+<cfcomponent displayname="JSON" hint="I return a json structure" output="false">
+
+	<cffunction name="list" output="true" returnformat="JSON" access="remote">
+		<cfargument name="returnType" type="string" default="json" hint="Format to return data">
+				<!-- create a structure and return values -->
+                <cfset result = structNew()>
+                <cfset result.status = false>
+				<cfset result.firstname="Jim">
+				<cfset result.lastname="Smith">
+				<cfset result.phone="555-555-5555">
+				<cfset result.address ="1111 N. MLK BLVD">
+				<cfset result.city ="Portland">
+				<cfset result.State ="OR">
+				<cfset result.country ="USA">
+			  <cfif arguments.returnType EQ "json">
+                      <cfreturn serializeJson(result)>
+              <cfelse>
+                      <cfreturn result>
+              </cfif>
+</cffunction>		
+
+</cfcomponent></textarea>
+</p>
+
+<a href="/">Back</a>
+</body>
+</html>
