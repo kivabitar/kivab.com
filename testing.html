@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Testing land</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<style>
+* { margin: 0; padding: 0; font-family: 'Forza A', 'Forza B'; font-weight: 400; font-style: normal; }
+body { background: #58595b; margin: 0; }
+img { border: 0px none; }
+.alignleft { display: inline; float: left; margin-right: 10px; margin-bottom: 10px; }
+.alignright { display: inline; float: right; margin-left: 10px; margin-bottom: 10px; }
+.aligncenter { display: inline; float: center; }
+#layout { float: left; width: 100%; }
+#main, #header, #top, #home, #home-footer, #gallery-layout, #footer, #events-slider { margin-left: auto; margin-right: auto; width: 1184px; }
+#layout { padding-bottom: 106px; }
+#slider { float: left; width: 100%; }
+#main, #home-footer, #page-content, #team, #footer, #gallery-layout { background: #231f20; }
+#main { margin-top: 104px; min-height: 300px; }
+#header { height: 72px; background-image: url('header.jpg'); background-repeat: no-repeat; margin-bottom: 12px; }
+#top { float: left; height: 40px; margin-top: 36px; background-image: url('navigation.jpg'); background-repeat: no-repeat; background-position: bottom right; }
+#logo { float: left; width: 300px; padding-left: 68px; margin-top: 3px; }
+#navigation { float: right; width: 406px; }
+#navigation a { color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 300; position: relative; z-index: 200; }
+#navigation a:hover { color: #6dcff6; }
+#navigation ul { text-align: left; display: inline; margin: 0; list-style: none; }
+#navigation ul li { display: inline-block; position: relative; padding-top: 12px; padding-bottom: 18px; padding-left: 10px; padding-right: 10px; cursor: pointer; -webkit-transition: all 0.9s; -moz-transition: all 0.9s; -ms-transition: all 0.9s; -o-transition: all 0.9s; transition: all 0.9s; }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+#navigation ul li { padding-top: 16px; }
+#navigation ul li:nth-child(3) ul { left: -109px !important; }
+#navigation ul li:nth-child(3) ul a { padding-left: 117px; }
+}
+@supports (-webkit-appearance:none) {
+#navigation ul li:nth-child(2) ul { left: -67px !important; }
+#navigation ul li:nth-child(2) ul a { padding-left: 75px; }
+#navigation ul li:nth-child(3) ul { left: -110px !important; }
+#navigation ul li:nth-child(3) ul a { padding-left: 118px; }
+#navigation ul li:nth-child(4) ul { left: -159px !important; }
+#navigation ul li:nth-child(4) ul a { padding-left: 167px; }
+#navigation ul li:nth-child(5) ul { left: -217px !important; }
+#navigation ul li:nth-child(5) ul a { padding-left: 225px; }
+#navigation ul li:nth-child(6) ul { left: -274px !important; }
+#navigation ul li:nth-child(6) ul a { padding-left: 282px; }
+}
+#home { height: 460px; margin-bottom: 3px; }
+#home img { width: 1184px; height: autopx; }
+#home-footer { height: 168px; }
+#home-footer li, #news-video li { list-style-type: none; float: left; margin-right: 3px; width: 388px; height: 168px; }
+#home-thumbs { float: left; padding-left: 3px; width: 788px; }
+#photos-title, #video-title { width: 383px; height: 34px; padding-top: 10px; padding-left: 5px; color: #FFFFFF; margin-top: 124px; font-size: 12px; font-weight: 700; }
+#photos-title { background: rgb(16,163, 221); background: rgba(16,163, 221, .5); }
+#video-title { background: rgb(205, 80, 25); background: rgba(205, 80, 25, .5); }
+#photos-title h4 { float: left; width: 100%; font-size: 10px; color: #6dcff6; text-transform: uppercase; margin-top: 4px; font-weight: 700 !important; }
+#video-title h4 { float: left; width: 100%; font-size: 10px; color: #f79328; text-transform: uppercase; margin-top: 4px; font-weight: 700 !important; }
+#home-introduction { float: left; font-size: 12px; color: #bbbdbf; padding-top: 26px; padding-right: 6px; width: 384px; line-height: 18px; }
+#footer { float: left; width: 1184px; height: 24px; text-align: right; }
+#footer-share { float: right; }
+#footer-share li { list-style-type: none; float: left; margin-right: 9px; margin-top: -7px; }
+#footer-share li:nth-child(2), #footer-share li:nth-child(3) { margin-top: -4px; }
+#footer-share li:nth-child(3) { marign-right: 12px; }
+#page-content, #team { float: left; width: 1184px; }
+#news-slider { float: left; width: 780px; height: 460px; padding-left: 4px; overflow: hidden; }
+#news-feed { float: left; width: 388px; margin-left: 4px; padding-top: 27px; padding-right: 8px; font-size: 12px; color: #bbbdbf; line-height: 16px; letter-spacing: .5px; }
+#news-feed a { color: #00adee; text-decoration: none; }
+#news-feed h1 { text-transform: uppercase; color: #00adee; font-size: 17px; margin-bottom: 8px; }
+#news-feed h2 a { color: #FFFFFF; font-size: 12px; text-decoration: none; }
+#news-latest { float: left; width: 100%; margin-bottom: 18px; }
+#news-archive { float: left; width: 100%; }
+#news-left { float: left; width: 784px; }
+#news-right { float: left; width: 400px; }
+#news-video { float: right; margin-top: 3px; }
+#news-video li { margin-right: 0px; }
+#team { font-size: 12px; color: #bbbdbf; line-height: 16px; letter-spacing: .5px; margin-top: 4px; margin-left: 0px; }
+.close, .box1, .box2, .box3, .box4 { display: none; }
+#north-link p, #south-link p { float: left; display: inline; text-transform: uppercase; }
+#north-link { color: #6dcff6; cursor: pointer; font-size: 17px; margin-top: 42px; margin-bottom: 3px; }
+#south-link { color: #f79328; cursor: pointer; font-size: 17px; }
+.sub-link { font-size: 12px; display: inline; float: left; margin-top: 1px; margin-left: 4px; }
+#team-section { float: left; width: 781px; min-height: 612px; margin-left: 4px; margin-right: 4px; }
+#team-page, #north-link, #south-link { float: left; width: 387px; letter-spacing: .5px; }
+#team-page { padding-top: 31px; }
+#team-page h1 { color: #00adee; font-size: 17px; text-transform: uppercase; margin-top: -3px; float: left; display: inline; width: 195px; height: 32px; }
+.team-banner { float: right; margin-bottom: 4px; margin-right: 1px; }
+#team-section ul { float: left; width: 781px; }
+#team-section li { float: left; width: 192px; list-style-type: none; margin-right: 4px; }
+#team-section li:nth-child(4) { margin-right: 0px; }
+#member-info, #team-name, .team-bio { float: left; width: 388px; }
+#team-name { color: #FFFFFF; text-transform: uppercase; }
+.team-title { color: #00adee; text-transform: none; margin-left: 4px; }
+.team-title2 { color: #f05a28; text-transform: none; margin-left: 4px; }
+#team-thumb { float: left; width: 192px; height: 211px; cursor: pointer; margin-bottom: 10px; }
+#team-image, #team-image2 { width: 186px; height: 13px; padding-left: 6px; color: #FFFFFF; font-size: 12px; text-transform: uppercase; margin-top: 198px; cursor: pointer; }
+#team-image { background: rgb(16,163, 221); background: rgba(16,163, 221, .5); }
+#team-image2 { background: rgb(205, 80, 25); background: rgba(205, 80, 25, .5); }
+#news-archive li { float: left; list-style-type: none; width: 100%; height: 300px; padding-left: 4px; padding-right: 4px; margin-bottom: 4px; }
+#news-archive li:first-child { margin-top: -42px; }
+#news-archive li h2 { color: #FFFFFF; text-decoration: none; text-transform: uppercase; font-size: 12px; }
+#archive-image { float: left; }
+#archive-content { float: right; width: 387px; margin-right: 4px; margin-top: 60px; }
+#archive-date { float: left; margin-top: 60px; }
+#news-archive li h4 { color: #00adee; margin-left: 4px; }
+h4.red { color: #ee4036 !important; }
+#archive-title { float: left; font-size: 17px; color: #00adee; text-transform: uppercase; position: relative; z-index: 5; margin-left: 591px; margin-top: 28px; }
+#menu-item-description, .menubar-widget-title { display: none !important; }
+li#menubar_widget_3, .menubar-widgets .menubar-item-widget-recent-entries  { float: left !important; padding-left: 140px !important;  }
+.recent-posts-3 { padding-top: 0px !important; padding-bottom: 0px !important; padding-right: 6px !important; line-height: 17px; margin-top: 28px !important; height: 130px; position: relative !important; z-index: 100 !important; }
+#menubar_widget_3 .post-date { float: left; font-size: 12px; margin-left: 116px; width: 388px; margin-top: -71px; }
+#menubar_widget_3 ul li { background: transparent !important; margin-top: 16px !important; margin-left: 108px !important; padding-top: 22px !important; text-indent: -116px !important; padding-left: 116px !important; }
+#menubar_widget_3 ul li a { color: #FFFFFF; }
+.text-3 a { float: left; background: transparent !important; margin-top: -50px !important; margin-left: -140px !important; font-size: 10px !important; text-transform: uppercase; color: #6dcff6 !important; }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+#menubar_widget_3 .post-date { margin-left: 118px; }
+#menubar_widget_3 ul li { text-indent: -116px !important; padding-left: 118px !important; }
+.text-3 a { margin-left: -142px !important; }
+}
+.single-post { min-height: 500px !important; }
+.fancybox-type-iframe .fancybox-nav { width: 60px; }
+.fancybox-type-iframe .fancybox-nav span { visibility: visible; opacity: 0.5; }
+.fancybox-type-iframe .fancybox-nav:hover span { opacity: 1; }
+.fancybox-type-iframe .fancybox-next { right: -36px; }
+.fancybox-type-iframe .fancybox-prev { left: -36px; }
+#gallery-layout { float: left; font-size: 12px; color: #bbbdbf; }
+#gallery-content { line-height: 16px; }
+#gallery-grid { float: left; width: 788px; }
+#gallery-page, #car-page { float: left; width: 100%; background: #231f20; }
+#gallery-page li { float: left; list-style-type: none; margin: 4px; width: 388px; height: 244px; }
+#gallery-item { float: left; width: 388px; height: 244px; position: relative; margin-bottom: 4px; margin-right: 4px; }
+#gallery-north { background: rgb(16,163, 221); background: rgba(16,163, 221, .5); }
+#gallery-north a, #gallery-south a { color: #FFFFFF; text-decoration: none; }
+.gallery-north, .gallery-south { font-size: 10px !important; text-transform: uppercase; font-weight: 700; }
+.gallery-north:hover { color: #b9e5fa; }
+.gallery-south:hover { color: #f79328 }
+.gallery-north { color: #6dcff6; }
+.gallery-south { color: #f05a28; }
+#gallery-south { background: rgb(205, 80, 25); background: rgba(205, 80, 25, .5); }
+.div-show { color: #FFFFFF; font-size: 12px; display:none; min-height: 38px; padding-top: 6px; bottom: -4px; width: 384px; padding-left: 4px; z-index: 1000; position: absolute; }
+.gallery-north-arrow-show { display: none; z-index: 1000; position: absolute; background-image: url('arrow-north.png'); background-repeat: no-repeat; width: 31px; height: 25px; margin-top: 120px; margin-left: 8px; }
+.gallery-south-arrow-show { display: none; z-index: 1000; position: absolute; background-image: url('arrow-south.png'); background-repeat: no-repeat; width: 31px; height: 25px; margin-top: 120px; margin-left: 8px; }
+.outer:hover .div-show, .outer:hover .gallery-north-arrow-show, .outer:hover .gallery-south-arrow-show { display: block; }
+#video-arrow { float: left; position: absolute; z-index: 50; background-image: url('video-arrow.png'); background-repeat: no-repeat; width: 31px; height: 25px; margin-top: 120px; margin-left: 8px; }
+#click-images { float: left; width: 100%; }
+#click-images a { color: #6dcff6; text-decoration: none; font-size: 10px; text-transform: uppercase; }
+#events-slider { float: left; height: 460px; font-size: 12px; color: #bbbdbf; line-height: 16px; margin-bottom: 156px; }
+#events-slider h1 { text-transform: uppercase; color: #00adee; font-size: 17px; margin-bottom: 8px; }
+#events-slider h2 { color: #FFFFFF; text-decoration: none; text-transform: uppercase; font-size: 12px; }
+#events-image { float: left; width: 780px; margin-left: 4px; margin-right: 4px; }
+#events-content { float: left; width: 385px; position: relative; z-index: 1000; height: 433px; padding-top: 27px; }
+#events-content img { width: auto; height: 148px; position: absolute; bottom: 0; right: 0; }
+#car-page { font-size: 12px; color: #bbbdbf; line-height: 16px; letter-spacing: 0.5px; margin-top: 4px; }
+#car-page h1 { float: left; text-transform: uppercase; color: #00adee; font-size: 17px; display: inline; width: 185px; height: 32px; }
+#car-page li { list-style-type: none; height: 300px; margin-bottom: 4px; }
+#car-top { float: left; width: 588px; margin-left: 592px; margin-top: 28px; position: absolute; z-index: 500; }
+#car-image { float: left; width: 584px; margin-right: 4px; margin-left: 4px; }
+#car-content { float: left; width: 588px; height: 300px; position: relative; }
+#car-section { float: left; width: 588px; }
+#car-team { float: left; width: 185px; padding-bottom: 122px; bottom: 0; left: 0; position: absolute; }
+.model-tcm-north { color: #00adee; cursor: pointer; }
+.model-tcm-north:hover { color: #6dcff6; }
+.model-tcm-south { color: #ee4036; cursor: pointer; }
+.model-tcm-south:hover { color: #f79328; }
+#car-information { float: right; width: 403px; height: 138px; position: absolute; bottom: 0; right: 0; }
+.info-tcm-north { color: #00adee; }
+.info-tcm-south { color: #ee4036; }
+.specs-tcm-north, .specs-tcm-south { float: left; width: 100%; }
+#contact-page { float: left; font-size: 12px; color: #bbbdbf; letter-spacing: .5px; line-height: 16px; text-align: center; }
+#contact-page h1 { float: left; text-transform: uppercase; color: #00adee; font-size: 17px; width: 100%; margin-bottom: 30px; }
+.box { display: none; }
+#big-arrows img { position: absolute; width: 327px; height: 460px; margin-left: 73px; margin-top: -460px; z-index: 300; }
+#pagination { float: left; width: 600px; }
+.close3 { display: none; }
+</style>
+<script>
+$(document).ready(function(){
+	var open = $('.open'),
+	    a = $('ul').find('a');
+	console.log(a.hasClass('active'));
+	open.click(function(e){
+	   // e.preventDefault();
+	    var $this = $(this),
+	        speed = 500;
+	    if($this.hasClass('active') === true) {
+	        $this.removeClass('active');
+	        $this.next('.box').fadeIn(speed);
+	    } else if(a.hasClass('active') === false) {
+	        $this.addClass('active').next('.box').fadeOut(speed);
+	    } else {
+	        a.removeClass('active').next('.box').fadeIn(speed);
+	        $this.addClass('active');
+	        $this.next('.box').delay(speed).fadeOut(speed);
+	    }
+	});
+	});
+</script>
+</head>
+<body>
+
+<div id="car-page">
+
+<div id="car-top">
+
+	
+
+<h1>Our Machines</h1>
+
+<p>TCM Motorsports demonstrates that variety is the spice of life. From Porsche Club and SCCA racing in a 911 GT3 Cup, to tearing through the unforgiving terrain of Baja in the Class 1, TCM Motorsports enjoys the distinct challenges that each type of racing delivers. Committed to winning. These cars are guaranteed to be competitive in their classes.</p>
+
+
+
+</div>
+
+ 
+ 
+<li>
+
+<div id="car-image">
+
+<img src="http://tcm.mendoncacreative.com/wp-content/uploads/2014/10/car1.jpg">
+
+</div>
+
+<div id="car-section">
+
+<div id="car-content">
+
+<div id="car-team" class="model-tcm-north open active">
+
+Porsche 911 GT3 Cup (997)
+</div>
+
+<div id="car-information" class="box">
+
+<div class="info-tcm-north">
+
+<p>The Porsche 911 GT3 Cup (997) was added to the TCM Motorsports racing group in 2009. Driven exclusively by TCM Motorsports owner, Jay Culbertson, the car is a top contender in its class taking numerous first place finishes in local SCCA and Porsche Club racing.</p>
+
+</div>
+
+<div class="specs-tcm-north">
+
+<p>Single-Seat Race Vehicle Featuring carbon fiber doors, rearlid and wing.</p>
+<p>Engine type: Flat 6 Boxer engine</p>
+
+</div>
+
+</div>
+
+
+
+
+
+</div>
+
+</li>
+
+ 
+<li>
+
+<div id="car-image">
+
+<img src="http://tcm.mendoncacreative.com/wp-content/uploads/2014/10/car2.jpg">
+
+</div>
+
+<div id="car-section">
+
+<div id="car-content">
+
+<div id="car-team" class="model-tcm-south open active">
+
+Chenowth Class 1 Buggie
+</div>
+
+<div id="car-information" class="box">
+
+<div class="info-tcm-south">
+
+<p>The TCM Motorsports Chenowth Class 1 Buggie has seen racing exclusively in various Baja races since 2003. This vehicle is built to aggressively handle the rigors of the Baja landscaping and its handling doesn&#8217;t disappoint.</p>
+
+</div>
+
+<div class="specs-tcm-south">
+
+<p>Duel Seat Race Vehicle Fiberglass Body</p>
+<p>Engine type: Nissan V-6 Engine</p>
+
+</div>
+
+</div>
+
+
+
+
+
+</div>
+
+</li>
+
+ 
+
+</div>
+
+
+
+
+
+</body>
+</html>

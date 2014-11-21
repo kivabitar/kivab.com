@@ -10,13 +10,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
 <link href="/site.css" media="all" rel="stylesheet" />
-<link href="/scripts/jquery.fancybox.css" media="all" rel="stylesheet" />
 <script src="/scripts/scroll.js"></script>
 <script src="/scripts/jquery.fancybox.js"></script>
 <script src="/scripts/jquery.fancybox.pack.js"></script>
 <script src="/scripts/scroll.js"></script>
 <script src="/scripts/jquery.slicknav.min.js"></script>
-<link href="/scripts/slicknav.css" media="all" rel="stylesheet" />
 
 <script>
 $(function() { 
@@ -41,14 +39,11 @@ $(function() {
 	<img src="/images/kb.png" id="logo" alt="Kiva Bitar" data-scroll-nav='0'/>
 	<nav>
 		<ul id="menu">
-			<li><a>About</a>
-				<ul>
-					<a class='active' data-scroll-nav='0'>Summary</a>
-					<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
-				</ul>
-			</li>
+			<li><a class='active' data-scroll-nav='0'>About</a></li>
 			<li><a data-scroll-nav='1'>Work</a></li>
 			<li><a data-scroll-nav='2'>Contact</a></li>
+			<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
+			<li><a data-scroll-nav='3'>Links</a></li>
 		</ul>
 	</nav>
 </div>
@@ -106,6 +101,9 @@ $(function() {
 				</ul>
 			</div>
 		</div>
+		<p class='bottom-link'>
+		<a data-scroll-goto='0'>Back to top</a>
+		</p>
 	</div>
 </section>
 <section data-scroll-index='2' id="contact">
@@ -136,7 +134,66 @@ $(function() {
 		</p>
 	</div>
 </section>
+<section data-scroll-index='3' id="links">
+	<div class='content'>
+		<h2>hrefs:</h2>
+			Friends, resources, stuff:
+			<ul>
+				<li>
+					<a href="http://www.mendoncacreative.com/" target="_blank">http://www.mendoncacreative.com/</a>
+				</li>
+				<li>
+					<a href="http://www.reddit.com/" target="_blank">http://www.reddit.com/</a>
+				</li>
+				<li>
+					<a href="http://gruntjs.com/" target="_blank">http://www.grunjs.com/</a>
+				</li>
+				<li>
+					<a href="http://nodejs.org/" target="_blank">http://nodejs.org/</a>
+				</li>
+				<li>
+					<a href="http://bower.io/" target="_blank">http://bower.io/</a>
+				</li>
+				<li>
+					<a href="http://nodejs.org/" target="_blank">http://nodejs.org/</a>
+				</li>
+				<li>
+					<a href="https://angularjs.org/" target="_blank">https://angularjs.org/</a>
+				</li>
+				<li>
+					<a href="http://indamixrecords.com/" target="_blank">http://indamixrecords.com/</a>
+				</li>
+				<li>
+					<a href="http://www.phoenixmedia.com/" target="_blank">http://www.phoenixmedia.com/</a>
+				</li>
+				<li>
+					<a href="http://gamafunction.com/" target="_blank">http://gamafunction.com/</a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/deejaywicked" target="_blank">https://www.facebook.com/deejaywicked</a>
+				</li>
+				<li>
+					<a href="http://www.nixon.com/us/en/" target="_blank">http://www.nixon.com/us/en/</a>
+				</li>
+				<li>
+					<a href="http://www.indiospirits.com/" target="_blank">http://www.indiospirits.com/</a>
+				</li>
+				<li>
+					<a href="http://www.accumulus.com/" target="_blank">http://www.accumulus.com/</a>
+				</li>
+				<li>
+					<a href="http://panderbrothers.squarespace.com/" target="_blank">http://panderbrothers.squarespace.com/</a>
+				</li>
+				
+				
+				</ul>
 
+			
+		<p class='bottom-link'>
+		<a data-scroll-goto='0'>Back to top</a>
+		</p>
+	</div>
+</section>
 <footer id="footer">
 	<ul>
 		<li><a href="http://kivabitar.blogspot.com/" title="Blogger" class="hrefers" target="_blank">&gt; Blog</a></li>
@@ -145,6 +202,10 @@ $(function() {
 		<li><a data-scroll-goto='0' class="hrefers">Top</a></li>
 	</ul>
 </footer>
+<div id="welcome" >
+	<h2 style="margin:50px">Welcome!</h2>
+	<div style="margin:50px;">You can navigate using your arrow keys &uarr; &darr; on your keyboard.</div>
+</div>
 <script>
 	$(document).ready(function(){
 		$(".fancybox").fancybox({
@@ -190,9 +251,16 @@ $(function() {
 		closeOnClick: true,
 		prependTo: $('.nav-container')
 	});
-			
-
+	
+	if (document.cookie.indexOf("welcome=true") === -1) {
+	    var expires = new Date();
+	    expires.setDate(expires.getDate()+30);
+	    document.cookie = "welcome=true; expires="+expires.toUTCString();
+	    $("#welcome").fadeIn("fast").delay(2000).fadeOut("fast");
+	}
+	
 	});
 </script>
+
 </body>
 </html>
