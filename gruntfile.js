@@ -4,12 +4,11 @@ module.exports = function(grunt){
 		less:{
 			compile:{
 				files:{
-						'site.css' : 'less/site.less'
+						'scripts/site.css' : 'less/site.less'
 					}
+			}
 		}
-	}
 	});
-	
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.registerTask('default', ["less"])
 }

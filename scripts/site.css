@@ -49,6 +49,7 @@ section img {
   max-width: 100%;
   position: fixed;
   left: 0px;
+  z-index: 100;
 }
 nav {
   display: none;
@@ -62,6 +63,60 @@ section {
   height: 1200px;
   width: 100%;
   background: url(/images/kb_lrg.png) no-repeat 100% 60px fixed;
+}
+.aboutDiv {
+  position: fixed;
+  left: -300px;
+  top: 60px;
+  width: 310px;
+  height: 820px;
+  background-color: none;
+  padding-right: 30px;
+  background-image: url(/images/right.png);
+  background-repeat: no-repeat;
+  background-position: right 37px;
+  cursor: pointer;
+  overflow: visible;
+  z-index: 10;
+}
+.buffer {
+  margin: 10px 10px 10px 0;
+  background-image: url(/images/buffbg.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  overflow: visible;
+  height: 800px;
+  cursor: auto !important;
+}
+.buffer h1 {
+  padding-left: 10px;
+  color: white;
+  background: url(/images/trans.png) repeat;
+  backgound-color: #000;
+  font-size: 30px;
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.buffer ul {
+  background: url(/images/trans.png) repeat;
+  padding: 20px 0 20px 10px;
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.buffer ul li {
+  margin: 0 0 10px 0;
+}
+.buffer ul li a {
+  color: white;
+  font-weight: bold;
 }
 section .content a {
   color: #a9d0f5;
@@ -118,7 +173,7 @@ h4 {
   color: #062270;
 }
 .oldman {
-  max-width: 300px;
+  max-width: 100px;
 }
 #sidebar {
   postition: absolute;
@@ -264,6 +319,7 @@ input[type="submit"] {
   display: block;
   line-height: 1.188em;
   float: left;
+  z-index: 100;
 }
 .slicknav_menu .slicknav_icon {
   float: left;
@@ -341,7 +397,7 @@ input[type="submit"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #A9D0F5;
+  background-color: #a9d0f5;
 }
 /* Button Text */
 .slicknav_menu .slicknav_menutxt {

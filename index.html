@@ -9,7 +9,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Syncopate' rel='stylesheet' type='text/css'>
-<link href="/site.css" media="all" rel="stylesheet" />
+<link href="/scripts/site.css" media="all" rel="stylesheet" />
 <script src="/scripts/scroll.js"></script>
 <script src="/scripts/jquery.fancybox.js"></script>
 <script src="/scripts/jquery.fancybox.pack.js"></script>
@@ -20,7 +20,6 @@
 $(function() { 
 	$.scrollIt(); 
 });
-
 </script>
 <link rel="icon"  type="image/png" href="/images/kb.png">
 <script>
@@ -47,14 +46,11 @@ $(function() {
 		</ul>
 	</nav>
 </div>
-
-<section data-scroll-index='0' id="about">
-
-	<div class='content'>
+<div class="aboutDiv">
+	<div class="buffer">
 	<h1>Kiva Bitar</h1>
-	
-		<img src="/images/kiva.jpg" title="Kiva Bitar" alt="Kiva Bitar" class="oldman" /> <br />
 		<ul>
+			<li><img src="/images/kiva.jpg" title="Kiva Bitar" alt="Kiva Bitar" class="oldman" /></li>
 			<li>ColdFusion / PHP Full Stack Web Developer</li>
 			<li>CSS/jQuery/HTML5</li>
 			<li>E-commerce</li>
@@ -66,6 +62,12 @@ $(function() {
 		</ul>
 	</div>
 
+</div>
+<section data-scroll-index='0' id="about">
+
+	<div class='content'>
+		<h2>Something new here.</h2>
+	</div>
 	
 </section>
 <section data-scroll-index='1' id="work">
@@ -184,8 +186,12 @@ $(function() {
 				<li>
 					<a href="http://panderbrothers.squarespace.com/" target="_blank">http://panderbrothers.squarespace.com/</a>
 				</li>
-				
-				
+				<li>
+					<a href="http://aaronleephotography.com/" target="_blank">http://aaronleephotography.com/</a>
+				</li>
+				<li>
+					<a href="http://www.chrisbrunkhart.com/" target="_blank">http://www.chrisbrunkhart.com/</a>
+				</li>
 				</ul>
 
 			
@@ -207,44 +213,58 @@ $(function() {
 	<div style="margin:50px;">You can navigate using your arrow keys &uarr; &darr; on your keyboard.</div>
 </div>
 <script>
-	$(document).ready(function(){
-		$(".fancybox").fancybox({
-			width : "96%",
-			height : "800"
-		});
-		$("#subby").click(function(){
-			var name = $("#name").val();
-			var email = $("#email").val();
-			var message = $("#message").val();
-			if(name == ""){
-				$("#name").focus();
-				return false
+$(document).ready(function(){
+	$(".fancybox").fancybox({
+		width : "96%",
+		height : "800"
+	});
+	$("#subby").click(function(){
+		var name = $("#name").val();
+		var email = $("#email").val();
+		var message = $("#message").val();
+		if(name == ""){
+			$("#name").focus();
+			return false
+		}
+		if(email == ""){
+			$("#email").focus();
+			return false
+		}
+		if(message == ""){
+			$("#message").focus();
+			return false
+		}
+		$.ajax({
+			type: "POST",
+			url: "proc.cfm",
+			data: $("#cform").serialize(),
+			success: function(data){
+				$("#response").html(data).slideDown("fast");
+				$("#cform").slideUp("slow");
+				$("#cform").each(function(){
+					$(this).reset();
+				})
+				
 			}
-			if(email == ""){
-				$("#email").focus();
-				return false
-			}
-			if(message == ""){
-				$("#message").focus();
-				return false
-			}
-			$.ajax({
-				type: "POST",
-				url: "proc.cfm",
-				data: $("#cform").serialize(),
-				success: function(data){
-					$("#response").html(data).slideDown("fast");
-					$("#cform").slideUp("slow");
-					$("#cform").each(function(){
-						$(this).reset();
-					})
-					
-				}
-			
-			})
-			
+		
 		})
-
+		
+	})
+	$('.aboutDiv').click(function(){
+		var x = $(this).position();
+		if(x.left == -300){
+			$(this).animate({
+				left: 0
+			},500);
+			$(this).css("background-image","url(/images/left.png)");
+		}
+		else{
+			$(this).animate({
+				left:-300
+			},500);
+			$(this).css("background-image","url(/images/right.png)");
+		}
+	});
 	$('#menu').slicknav({
 		label: ' ',
 		duration: 500,
