@@ -151,6 +151,9 @@ h4 {
 .bottom-link {
   margin-top: 80px;
 }
+.col1 {
+  max-width: 600px;
+}
 .gist-meta {
   display: none;
 }
@@ -173,7 +176,7 @@ h4 {
   color: #062270;
 }
 .oldman {
-  max-width: 100px;
+  max-width: 200px;
 }
 #sidebar {
   postition: absolute;
@@ -254,6 +257,13 @@ input[type="submit"] {
   -moz-border-radius: 50px;
   border-radius: 50px;
   opacity: .8;
+}
+.angslideshow {
+  width: 250px;
+  float: left;
+  clear: none;
+  height: 280px;
+  margin: 10px 20px 0 10px;
 }
 @media screen and (max-width: 640px) {
   #footer ul li {

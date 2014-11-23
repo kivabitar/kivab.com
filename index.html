@@ -38,11 +38,11 @@ $(function() {
 	<img src="/images/kb.png" id="logo" alt="Kiva Bitar" data-scroll-nav='0'/>
 	<nav>
 		<ul id="menu">
-			<li><a class='active' data-scroll-nav='0'>About</a></li>
+			<li><a class='active' data-scroll-nav='0'>Welcome</a></li>
 			<li><a data-scroll-nav='1'>Work</a></li>
 			<li><a data-scroll-nav='2'>Contact</a></li>
-			<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
 			<li><a data-scroll-nav='3'>Links</a></li>
+			<li><a href="/timeline.html" title="Kiva Bitar's career timeline." id="tline" data-fancybox-type="iframe" class="fancybox">Career Timeline</a></li>
 		</ul>
 	</nav>
 </div>
@@ -66,7 +66,26 @@ $(function() {
 <section data-scroll-index='0' id="about">
 
 	<div class='content'>
-		<h2>Something new here.</h2>
+		<h2>Welcome to kivab.com</h2> 
+		<div id="datetime">Sat Nov 22 2014 14:06:36 GMT-0800 (Pacific Standard Time)</div>
+		<p class="col1">
+			I am a Full Stack Web Developer that specializes in ColdFusion or PHP Web Applications.
+		</p>
+		<p class="col1">
+			I am currently available for website projects of just about any scope or size. If you need
+			standalone applications, an entire website, help figuring out your shopping cart, or 
+			a Developer to help set up your Coldfusion server, <a data-scroll-nav='2'>I am an email away.</a>
+		</p>
+		<p class="col1">
+			If you are here to checkout my website, be sure to visit my <a href="https://github.com/kivabitar/kivab.com/" title="GitHub" target="_blank">github repository</a> 
+			if you would like to see the source code. This site is brand new, and will soon feature a 
+			subscriber section for friends and family (wedding photos coming soon, I promise) as well 
+			as a full standalone Angular.js application in the works. 
+		</p>
+		<p class="col1">
+			Thank you for visiting,.
+			<a data-scroll-nav='2'>-Kiva Bitar</a>
+		</p>
 	</div>
 	
 </section>
@@ -278,6 +297,10 @@ $(document).ready(function(){
 	    document.cookie = "welcome=true; expires="+expires.toUTCString();
 	    $("#welcome").fadeIn("fast").delay(2000).fadeOut("fast");
 	}
+	var dt = new Date();
+	var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+	
+	//$("#datetime").text(dt);
 	
 	});
 </script>

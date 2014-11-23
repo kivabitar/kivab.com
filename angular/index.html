@@ -7,18 +7,22 @@
 <meta name="description" content="Kiva Bitar - Full Stack Web Developer">
 <meta name="author" content="Kiva Bitar">
 
-<link href="../site.css" media="all" rel="stylesheet" />
-<link href="../scripts/codemirror.css" media="all" rel="stylesheet" />
+<link href="../scripts/site.css" media="all" rel="stylesheet" />
 <link href="../scripts/3024-night.css" media="all" rel="stylesheet" />
+<link href="../scripts/codemirror.css" media="all" rel="stylesheet" />
 <script src="../node_modules/angular/angular.js"></script>
 <script src="../node_modules/angular-route/angular-route.js"></script>
 <script src="../scripts/codemirror.js"></script>
 <script>
 	var kivasApp = angular.module('kivasApp',[]);
-	kivasApp.controller('kbCtrl',function($scope,$http){
-		$http.get('json.cfc?method=list').success(function(data){
-			$scope.info = data;
+	kivasApp.controller('kbCtrl',function($scope,$http,$sce){
+		$http.get('/json.cfc?method=gallery').success(function(data){
+			$scope.images = data;
 		});
+		$scope.renderHtml = function(html_code)
+		{
+		    return $sce.trustAsHtml(html_code);
+		};
 	});
 </script>
 
@@ -35,60 +39,29 @@
 </script>
 </head>
 <body ng-controller="kbCtrl">
-
-<h1>Angular.js</h1>
-<p>The following table of data is pulled via $http by Angular.js and populated into the appropriate columns.
-<table>
-	<tr>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Address</th>
-		<th>City</th>
-		<th>State</th>
-		<th>Country</th>
-		<th>Phone</th>
-	</tr>
-	<tr>
-		<td>{{info.FIRSTNAME}}</td>
-		<td>{{info.LASTNAME}}</td>
-		<td>{{info.ADDRESS}}</td>
-		<td>{{info.CITY}}</td>
-		<td>{{info.STATE}}</td>
-		<td>{{info.COUNTRY}}</td>
-		<td>{{info.PHONE}}</td>
-	</tr>
-</table>
+<a href="../"><img src="../images/kb.png" id="logo" alt="Kiva Bitar Home" /></a>
+<h1>Angular.js Example - Rendered HTML from Flickr RSS</h1>
 <p>
-This page is an example of Angular.js working with a Coldfusion Component. The coldfusion component returns a JSON structure you can view <a href="/json.cfc?method=list">here</a>
+In this example, I am consuming an RSS feed from Flickr, and displaying it here. I consumed the feed with a CFC, and returned a JSON structure to angular.js. Below is a simple ng-repeat. 
+
+The catch is, Flickr returns a HTML content block rather than the simple path to the image. So a second function had to be created here:
 </p>
+<textarea id="myText">
 
-<p>The following is the .cfc markup:<br />
-	<textarea id="myText">
-<cfcomponent displayname="JSON" hint="I return a json structure" output="false">
-
-	<cffunction name="list" output="true" returnformat="JSON" access="remote">
-		<cfargument name="returnType" type="string" default="json" hint="Format to return data">
-				<!-- create a structure and return values -->
-                <cfset result = structNew()>
-                <cfset result.status = false>
-				<cfset result.firstname="Jim">
-				<cfset result.lastname="Smith">
-				<cfset result.phone="555-555-5555">
-				<cfset result.address ="1111 N. MLK BLVD">
-				<cfset result.city ="Portland">
-				<cfset result.State ="OR">
-				<cfset result.country ="USA">
-			  <cfif arguments.returnType EQ "json">
-                      <cfreturn serializeJson(result)>
-              <cfelse>
-                      <cfreturn result>
-              </cfif>
-	</cffunction>		
-
-</cfcomponent></textarea>
+//additional function to force the rendering of the html
+$scope.renderHtml = function(html_code)
+		{
+		    return $sce.trustAsHtml(html_code);
+		};
+		
+</textarea>
+<p>This is because by default, Angular.js escapes any HTML as a security measure to prevent script injection. 
 </p>
-
-<a href="/">Back</a>
+<div class="angslideshow" ng-repeat="image in images">
+	<div ng-bind-html="renderHtml(image.CONTENT)">
+			{{image.CONTENT}}
+	</div>
+</div>
 <script>
   var editor = CodeMirror.fromTextArea(myText, {
     mode: "text/html",
@@ -97,5 +70,7 @@ This page is an example of Angular.js working with a Coldfusion Component. The c
     theme: "3024-night"
   });
 </script>
+
+
 </body>
 </html>
