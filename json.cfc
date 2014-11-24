@@ -107,6 +107,73 @@
         }
 
     </cfscript>
-</cffunction>
+	</cffunction>
+	<cffunction name="images" output="true" returnformat="JSON" access="remote">
+		<cfargument name="imageId" type="string" default="" required="no">
+		<cfargument name="returnType" type="string" default="json" hint="Format to return data">
 
+               <cfset result = [
+
+             	{
+					imageUrl="/images/photos/image_01.jpg",
+					name="Image 01",
+					id = 1
+				},
+				{
+					imageUrl="/images/photos/image_02.jpg",
+					name="Image 02",
+					id = 2
+				},
+				{
+					imageUrl="/images/photos/image_03.jpg",
+					name="Image 03",
+					id = 3
+				},
+				{
+					imageUrl="/images/photos/image_04.jpg",
+					name="Image 041",
+					id = 4
+				},
+				{
+					imageUrl="/images/photos/image_05.jpg",
+					name="Image 05",
+					id = 5
+				},
+				{
+					imageUrl="/images/photos/image_06.jpg",
+					name="Image 06",
+					id = 6
+				},
+				{
+					imageUrl="/images/photos/image_07.jpg",
+					name="Image 07",
+					id = 7
+				},
+				{
+					imageUrl="/images/photos/image_08.jpg",
+					name="Image 08",
+					id = 8
+				},
+				{
+					imageUrl="/images/photos/image_09.jpg",
+					name="Image 09",
+					id = 9
+				},
+				{
+					imageUrl="/images/photos/image_10.jpg",
+					name="Image 10",
+					id = 10
+				}
+				]
+				/>
+
+ 			 	 <cfif arguments.imageId NEQ "">
+						<cfset result2 = structNew()>
+							<cfset number = int(arguments.imageId)>
+							<cfset result2= #result[number]#>
+						<cfreturn serializeJson(result2)>
+	               <cfelse>
+	                       <cfreturn result>
+	             </cfif>
+	</cffunction>
 </cfcomponent>

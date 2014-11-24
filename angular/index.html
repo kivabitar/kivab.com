@@ -55,7 +55,10 @@ $scope.renderHtml = function(html_code)
 		};
 		
 </textarea>
-<p>This is because by default, Angular.js escapes any HTML as a security measure to prevent script injection. 
+<p>This is because by default, Angular.js escapes any HTML as a security measure to prevent script injection.
+</p>
+<p>
+Below is a loop of my Flickr account, which I forgot I even had, and apparently I put my pictures from France, 20 of which are looped out below.
 </p>
 <div class="angslideshow" ng-repeat="image in images">
 	<div ng-bind-html="renderHtml(image.CONTENT)">
