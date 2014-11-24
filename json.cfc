@@ -116,52 +116,52 @@
 
              	{
 					imageUrl="/images/photos/image_01.jpg",
-					name="Image 01",
+					name="Array of photographs by Chris Brunkhart.",
 					id = 1
 				},
 				{
 					imageUrl="/images/photos/image_02.jpg",
-					name="Image 02",
+					name="Adam providing some music.",
 					id = 2
 				},
 				{
 					imageUrl="/images/photos/image_03.jpg",
-					name="Image 03",
+					name="Reflection on the wall of Chris Brunkhart signing books.",
 					id = 3
 				},
 				{
 					imageUrl="/images/photos/image_04.jpg",
-					name="Image 041",
+					name="View of Nemo gallery walls as people view photography of Chris Brunkhart",
 					id = 4
 				},
 				{
 					imageUrl="/images/photos/image_05.jpg",
-					name="Image 05",
+					name="Artwork by Zach Egge",
 					id = 5
 				},
 				{
 					imageUrl="/images/photos/image_06.jpg",
-					name="Image 06",
+					name="Another view of Nemo gallery walls as people view photography of Chris Brunkhart",
 					id = 6
 				},
 				{
 					imageUrl="/images/photos/image_07.jpg",
-					name="Image 07",
+					name="Yet another view of Nemo gallery walls as people view photography of Chris Brunkhart",
 					id = 7
 				},
 				{
 					imageUrl="/images/photos/image_08.jpg",
-					name="Image 08",
+					name="Chris signing books",
 					id = 8
 				},
 				{
 					imageUrl="/images/photos/image_09.jpg",
-					name="Image 09",
+					name="Random crowd shot",
 					id = 9
 				},
 				{
 					imageUrl="/images/photos/image_10.jpg",
-					name="Image 10",
+					name="Matt Donohue signing copies of How Many Dreams in the Dark",
 					id = 10
 				}
 				]

@@ -258,12 +258,38 @@ input[type="submit"] {
   border-radius: 50px;
   opacity: .8;
 }
+#kivagallery {
+  width: 90%;
+  margin: auto;
+  display: block;
+}
+#kivagallery h3 {
+  text-align: center;
+  width: 100%;
+}
+.thumbs {
+  float: left !important;
+  width: 250px  !important;
+  text-align: center !important;
+  border: 1px solid #a9d0f5 !important;
+  height: 260px !important;
+  margin: 10px !important;
+}
 .angslideshow {
   width: 250px;
   float: left;
   clear: none;
   height: 280px;
   margin: 10px 20px 0 10px;
+}
+#gnav {
+  font-size: 2em;
+  width: 200px;
+  margin: 0 auto 20px auto;
+}
+#bimage {
+  margin: auto;
+  width: 1000px;
 }
 @media screen and (max-width: 640px) {
   #footer ul li {

@@ -1,6 +1,7 @@
-<h2>{{image.NAME}}</h2>
+<h3>{{image.NAME}}</h3>
 <ul>
-  <li><img ng-src="{{image.IMAGEURL}}" width="400"></li>
-  <li>Title: {{image.NAME }}</li>
+  <li id="gnav"><a href="#/{{prevImage}}">&larr;</a> | <a href="/angular/app/#/">&uarr;</a> | <a href="#/{{nextImage}}">&rarr;</a></li>
+  <li id="bimage"><img ng-src="{{image.IMAGEURL}}" width="1000"></li>
+
 </ul>
-<a href="/angular/app/#/">Back</a>
+
