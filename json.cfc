@@ -167,9 +167,9 @@
 				]
 				/>
 
- 			 	 <cfif arguments.imageId NEQ "">
+ 			 	 <cfif arguments.imageId NEQ "" && arguments.imageId NEQ "undefined">
 						<cfset result2 = structNew()>
-							<cfset number = int(arguments.imageId)>
+							<cfset number = arguments.imageId>
 							<cfset result2= #result[number]#>
 						<cfreturn serializeJson(result2)>
 	               <cfelse>
