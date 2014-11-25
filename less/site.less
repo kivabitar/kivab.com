@@ -54,7 +54,9 @@ cursor:pointer;
 text-decoration:none;
 color:@links;
 }
-
+p{
+margin:10px;
+}
 ul{
 list-style:none;
 max-width:100%;
@@ -86,9 +88,9 @@ background:url(/images/kb_lrg.png) no-repeat 100% 60px fixed;
 }
 .aboutDiv{
 position:fixed;
-left:-300px;
+left:-280px;
 top:60px;
-width:310px;
+width:290px;
 height:820px;
 background-color:none;
 padding-right:30px;
@@ -273,16 +275,29 @@ border-radius: 50px;
 opacity:.8;
 }
 #kivagallery{
-width:90%;
+width:100%;
 margin:auto;
 display:block;
+clear:both;
+float:left;
+}
+#kivagallery ul{
+margin:0 !important;
+float:left;
+clear:both;
+width:100%;
 }
 #kivagallery h3{
+margin:20px auto;
 text-align:center;
 width:100%;
+min-height:50px;
+vertical-align:baseline !important;
 }
 .thumbs{
 float:left !important;
+display:inline;
+clear:none;
 width: 250px  !important;
 text-align:center !important;
 border:1px solid @lightblue !important;
@@ -296,16 +311,27 @@ clear:none;
 height:280px;
 margin:10px 20px 0 10px;
 }
+.ng-scope{
+margin:0 !important;
+padding:0 !important;
+}
 #gnav{
 font-size:2em;
-width:200px;
-margin:0 auto 20px auto;
+width:250px;
+margin:0 auto 20px auto !important;
+display:block;
+text-align:center;
 }
 #bimage{
 margin:auto;
-width:1000px;
+width:100%;
+height:900px;
+text-align:center;
 }
-
+#bgimage img{
+width:1000px;
+margin:auto !important;
+}
 @media screen and (max-width:640px){
 	#footer ul li{
 	margin:4px;
@@ -327,6 +353,46 @@ width:1000px;
 	background-size:50% !important;
 	background-position:100% 60px;
 	background-repeat:no-repeat;
+	}
+	#kivagallery{
+	width:100%;
+	margin:auto;
+	display:block;
+	}
+	#kivagallery h3{
+	margin:10px auto;
+	text-align:center;
+	width:100%;
+	min-height:50px;
+	}
+	#kivagallery ul .ng-scope{
+	margin:0 !important;
+	float:left;
+	clear:both;
+	}
+	.thumbs{
+	width:90% !important;
+	text-align:center !important;
+	margin: 10px auto !important;
+	float:none !important;
+	border:0 !important;
+	}
+	#bimage{
+	margin:0;
+	max-width:100% !important;
+	height:auto !important;
+	}
+	#bimage img{
+	margin:0;
+	max-width:100% !important;
+	height:auto !important;
+	}
+	#gnav{
+	font-size:2em;
+	width:100%;
+	margin:0;
+	display:block;
+	text-align:center;
 	}
 }
 
